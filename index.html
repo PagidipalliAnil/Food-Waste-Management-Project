@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Waste Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Food Waste Management Platform</h1>
+    </header>
+
+    <!-- Registration Section -->
+    <section id="registrationSection">
+        <h2>Register</h2>
+        <form id="registrationForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+            <label for="role">Role:</label>
+            <select id="role">
+                <option value="donor">Donor</option>
+                <option value="delivery">Delivery Personnel</option>
+            </select>
+            <button type="button" onclick="registerUser()">Register</button>
+        </form>
+    </section>
+
+    <!-- Login Section -->
+    <section id="loginSection">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" required>
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" required>
+            <button type="button" onclick="loginUser()">Login</button>
+        </form>
+    </section>
+
+    <!-- Food Donation Form Section (for donors) -->
+    <section id="donationFormSection" style="display: none;">
+        <h2>Donate Food</h2>
+        <form id="donationForm">
+            <label for="foodType">Food Type:</label>
+            <input type="text" id="foodType" required>
+            <label for="foodQuantity">Food Quantity:</label>
+            <input type="text" id="foodQuantity" required>
+            <label for="foodLocation">Food Location:</label>
+            <input type="text" id="foodLocation" required>
+            <label for="contactInfo">Contact Info:</label>
+            <input type="text" id="contactInfo" required>
+            <button type="button" onclick="submitDonation()">Submit Donation</button>
+        </form>
+    </section>
+
+    <!-- Food Entries Display Section (for delivery personnel) -->
+    <section id="foodEntriesSection" style="display: none;">
+        <h2>Food Entries</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Food Type</th>
+                    <th>Quantity</th>
+                    <th>Location</th>
+                    <th>Contact</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="foodEntries"></tbody>
+        </table>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
